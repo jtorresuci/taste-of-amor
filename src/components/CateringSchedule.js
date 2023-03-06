@@ -21,12 +21,14 @@ function CateringSchedule() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const stripe = await loadStripe("your_stripe_public_key");
+    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_KEY);
+    console.log()
+    
     const { name, email, phone, dateTime, message } = formState;
     const amount = 2000; // 20.00 USD in cents
     console.log(formState)
     try {
-      const response = await fetch("/create-checkout-session", {
+      const response = await fetch("http://localhost:3001/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
