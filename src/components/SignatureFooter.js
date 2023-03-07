@@ -14,14 +14,14 @@ function SignatureFooter(props) {
         {/* <img src={props.ninjalogo} alt="100ninjas Logo" className="signature-footer-logo" /> */}
       </a>
       <p className="signature-footer-text color-change-5x">
-        BUILT BY{" "}
+        Built by{" "}
         <a
           href="https://100ninjas.dev/"
           target="_blank"
           rel="noreferrer"
           className="signature-footer-link"
         >
-          <i className="fas fa-link fa-sm"></i>100NINJAS.DEV
+          <i className="fas fa-link fa-sm"></i>100ninjas.dev
         </a>
       </p>
     </div>
