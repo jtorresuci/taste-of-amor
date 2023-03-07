@@ -5,7 +5,7 @@ function Footer({ logo }) {
   return (
     <Box sx={{ color: "black", paddingTop: 20 }}>
       <Container sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexDirection: { xs: "column", sm: "row" } }}>
-        <Box sx={{ display: "column", alignItems: "center", marginBottom: { xs: 2, sm: 0 } }}>
+        <Box sx={{ display: "column", alignItems: "center", marginBottom: { xs: 5, sm: 5 } }}>
         <Typography variant="body1">Taste of Amor</Typography>
         <Typography variant="body1">714-777-7777</Typography>
         </Box>
