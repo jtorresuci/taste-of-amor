@@ -13,38 +13,41 @@
   }
   
   .signature-footer-text {
-  font-size: 14px;
-  font-family: 'Space Mono', monospace;
+  font-size: 17px;
+  font-family: 'Sail', cursive;
   color: black; /* changing the text color to white */
   }
   
   .signature-footer-link {
-  color: inherit;
-  text-decoration: none;
-  animation: color-change-5x 8s linear infinite alternate both;
+    color: #fcbbdf;
+    text-decoration: none;
+    animation: color-change-5x 8s linear infinite alternate both;
   }
-  
   
   @keyframes color-change-5x {
     0% {
-      color: #19dcea;
-      text-shadow: 0 0 2px #19dcea;
+      color: #fce6f2;
+      text-shadow: 0 0 2px #fce6f2;
     }
-    25% {
-      color: #b22cff;
-      text-shadow: 0 0 2px #b22cff;
+    20% {
+      color: #fcb3d1;
+      text-shadow: 0 0 2px #fcb3d1;
     }
-    50% {
-      color: #ea2222;
-      text-shadow: 0 0 2px #ea2222;
+    40% {
+      color: #fb80b1;
+      text-shadow: 0 0 2px #fb80b1;
     }
-    75% {
-      color: #f5be10;
-      text-shadow: 0 0 2px #f5be10;
+    60% {
+      color: #f94d91;
+      text-shadow: 0 0 2px #f94d91;
+    }
+    80% {
+      color: #fc3d80;
+      text-shadow: 0 0 2px #fc3d80;
     }
     100% {
-      color: #3bd80d;
-      text-shadow: 0 0 2px #3bd80d;
+      color: #fc6c9c;
+      text-shadow: 0 0 2px #fc6c9c;
     }
   }
   

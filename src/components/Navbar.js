@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   AppBar,
   Box,
@@ -9,11 +9,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-// import logo from "./logo.png";
 
-function Navbar({logo}) {
+function Navbar({ logo }) {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 600px)");
+  const navbarRef = useRef(null);
 
   function toggleMenu() {
     setIsOpen((prev) => !prev);
@@ -23,14 +23,39 @@ function Navbar({logo}) {
     setIsOpen(false);
   }
 
+  function handleClickOutside(event) {
+    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      closeMenu();
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#fbfaf8", color: "black" }}>
-      <Toolbar sx={{ justifyContent: "space-between", padding:'2.5rem' }}>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#fbfaf8", color: "black" }}
+    >
+      <Toolbar
+        sx={{ justifyContent: "space-between", padding: "2.5rem" }}
+        ref={navbarRef}
+      >
         {/* Logo */}
-        <Box sx={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        >
           <Box sx={{ textAlign: "center", padding: "8px" }}>
             <Link to="/">
-              <img src={logo} alt="Logo" style={{  height: "100px" }} />
+              <img src={logo} alt="Logo" style={{ height: "100px" }} />
             </Link>
           </Box>
         </Box>

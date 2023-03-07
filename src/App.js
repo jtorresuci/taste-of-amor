@@ -4,30 +4,31 @@ import Navbar from "./components/Navbar";
 import Homepage from "./Homepage";
 import theme from "./theme";
 import CateringSchedule from "./components/CateringSchedule";
-import { CssBaseline } from '@mui/material';
+import { CssBaseline } from "@mui/material";
 
 import SuccessMessage from "./components/SuccessMessage";
 import ComingSoon from "./components/ComingSoon";
 import SignatureFooter from "./components/SignatureFooter";
 import Loader from "./components/Loader";
 import Codepen from "./components/Codepen";
-import './App.css'
+import "./App.css";
+import About from "./components/About";
+import HomeScreen from "./Screens/HomeScreen";
 function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-      <CssBaseline/>
-        <Navbar logo={'./tasteofamor.png'} />
-        <ComingSoon/>
-        <div className="loader-container">
-          <Loader />
-        </div>      <Routes>
+        <CssBaseline />
+        <Navbar logo={"./tasteofamor.png"} />
+        
+        <Routes>
           <Route path="/success.html*" element={<SuccessMessage />} />
           <Route exact path="/schedule" element={<CateringSchedule />} />
+          <Route exact path="/" element={<HomeScreen />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
-        <SignatureFooter/>
+        <SignatureFooter />
       </ThemeProvider>
-
     </Router>
   );
 }
