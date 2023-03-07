@@ -5,14 +5,17 @@ import Homepage from "./Homepage";
 import theme from "./theme";
 import CateringSchedule from "./components/CateringSchedule";
 
+import SuccessMessage from "./components/SuccessMessage";
+
 function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <Navbar />
-        <CateringSchedule/>
+        {/* <CateringSchedule /> */}
         <Routes>
-          <Route exact path="/" element={<Homepage />} />
+          <Route path="/success.html*" element={<SuccessMessage />} />
+          <Route exact path="/" element={<CateringSchedule />} />
         </Routes>
       </ThemeProvider>
     </Router>

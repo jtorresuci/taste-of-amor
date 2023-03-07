@@ -12,6 +12,8 @@ function CateringSchedule() {
     message: "",
   });
 
+  const stripePublicAPIKey = process.env.REACT_APP_STRIPE_KEY
+
   const handleChange = (event) => {
     setFormState({
       ...formState,
@@ -21,7 +23,7 @@ function CateringSchedule() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_KEY);
+    const stripe = await loadStripe(stripePublicAPIKey);
     console.log()
     
     const { name, email, phone, dateTime, message } = formState;
