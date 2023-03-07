@@ -69,7 +69,7 @@ function CateringSchedule() {
       }}
     >
       <Box sx={{ fontSize: '24px', fontWeight: 'bold', mb: 3, paddingTop: '3rem' }}>
-      SCHEDULE (TEST MODE)
+      Schedule an Event (TEST MODE)
       </Box>
       <Box
         component="form"
