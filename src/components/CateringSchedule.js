@@ -69,7 +69,7 @@ function CateringSchedule() {
       }}
     >
       <Box sx={{ fontSize: '24px', fontWeight: 'bold', mb: 3 }}>
-        Schedule a Catering Event
+      SCHEDULE
       </Box>
       <Box
         component="form"

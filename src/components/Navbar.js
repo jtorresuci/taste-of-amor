@@ -9,8 +9,9 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+// import logo from "./logo.png";
 
-function Navbar() {
+function Navbar({logo}) {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 600px)");
 
@@ -23,19 +24,21 @@ function Navbar() {
   }
 
   return (
-    <AppBar position="static" sx={{ justifyContent: "center" }}>
-   <Toolbar>
+    <AppBar position="static" sx={{ backgroundColor: "#fbfaf8", color: "black" }}>
+      <Toolbar sx={{ justifyContent: "space-between", padding:'2.5rem' }}>
         {/* Logo */}
-        <Box sx={{ flexGrow: 1, textAlign: "center", padding: "8px" }}>
-          <Link to="/">
-            <img src="https://dummyimage.com/100x100/000/fff" alt="Logo" />
-          </Link>
+        <Box sx={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
+          <Box sx={{ textAlign: "center", padding: "8px" }}>
+            <Link to="/">
+              <img src={logo} alt="Logo" style={{  height: "100px" }} />
+            </Link>
+          </Box>
         </Box>
 
         {/* Menu button */}
         {isMobile && (
           <IconButton
-            edge="start"
+            edge="end"
             color="inherit"
             aria-label="Open menu"
             onClick={toggleMenu}
