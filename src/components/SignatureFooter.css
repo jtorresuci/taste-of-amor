@@ -1,7 +1,8 @@
 .signature-footer-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
+  padding-right: 1rem;
   /* padding-top: 4rem; */
   /* background-color: #fce6f2; */
 }
