@@ -14,7 +14,7 @@ function SignatureFooter(props) {
         {/* <img src={props.ninjalogo} alt="100ninjas Logo" className="signature-footer-logo" /> */}
       </a>
       <p className="signature-footer-text color-change-5x">
-        Built by{" "}
+        Designed and developed by{" "}
         <a
           href="https://100ninjas.dev/"
           target="_blank"

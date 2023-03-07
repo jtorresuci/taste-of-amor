@@ -34,7 +34,7 @@ function App() {
         </Routes>
 
         <Footer logo="tasteofamor.png" />
-        {/* <SignatureFooter /> */}
+        <SignatureFooter />
       </ThemeProvider>
     </Router>
   );

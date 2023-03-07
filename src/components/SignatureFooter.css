@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   /* background-color: #fce6f2; */
 }
   
@@ -13,8 +13,8 @@
   }
   
   .signature-footer-text {
-  font-size: 17px;
-  font-family: 'Sail', cursive;
+  font-size: 10px;
+  /* font-family: 'Sail', cursive; */
   color: black; /* changing the text color to white */
   }
   
@@ -27,27 +27,27 @@
   @keyframes color-change-5x {
     0% {
       color: #fce6f2;
-      text-shadow: 0 0 2px #fce6f2;
+      /* text-shadow: 0 0 2px #fce6f2; */
     }
     20% {
       color: #fcb3d1;
-      text-shadow: 0 0 2px #fcb3d1;
+      /* text-shadow: 0 0 2px #fcb3d1; */
     }
     40% {
       color: #fb80b1;
-      text-shadow: 0 0 2px #fb80b1;
+      /* text-shadow: 0 0 2px #fb80b1; */
     }
     60% {
       color: #f94d91;
-      text-shadow: 0 0 2px #f94d91;
+      /* text-shadow: 0 0 2px #f94d91; */
     }
     80% {
       color: #fc3d80;
-      text-shadow: 0 0 2px #fc3d80;
+      /* text-shadow: 0 0 2px #fc3d80; */
     }
     100% {
       color: #fc6c9c;
-      text-shadow: 0 0 2px #fc6c9c;
+      /* text-shadow: 0 0 2px #fc6c9c; */
     }
   }
   
