@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   IconButton,
+  Stack,
   Toolbar,
   useMediaQuery,
 } from "@mui/material";
@@ -12,7 +13,7 @@ import { Link } from "react-router-dom";
 
 function Navbar({ logo }) {
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery("(max-width: 1425px)");
   const navbarRef = useRef(null);
 
   function toggleMenu() {
@@ -42,7 +43,7 @@ function Navbar({ logo }) {
       sx={{ backgroundColor: "#fbfaf8", color: "black" }}
     >
       <Toolbar
-        sx={{ justifyContent: "space-between", padding: "2.5rem" }}
+        sx={{ justifyContent: "space-between", paddingTop: "2.5rem", paddingBottom: "2.5rem" }}
         ref={navbarRef}
       >
         {/* Logo */}
@@ -81,13 +82,26 @@ function Navbar({ logo }) {
               About
             </Button>
             <Button color="inherit" component={Link} to="/schedule">
-              Catering
+              Contact
+            </Button>
+        
+            <Button color="inherit" component={Link} to="/schedule">
+              Services
+            </Button>
+            <Button color="inherit" component={Link} to="/schedule">
+              Book Online
+            </Button>
+            <Button color="inherit" component={Link} to="/schedule">
+              Packages
+            </Button>
+            <Button color="inherit" component={Link} to="/schedule">
+              FAQ
             </Button>
           </Box>
         )}
         {/* Mobile menu */}
         {isMobile && (
-          <Box
+            <Box
             sx={{
               position: "absolute",
               top: "64px",
@@ -100,33 +114,30 @@ function Navbar({ logo }) {
               display: isOpen ? "block" : "none",
             }}
           >
-            <Button
-              fullWidth
-              color="inherit"
-              onClick={closeMenu}
-              component={Link}
-              to="/"
-            >
+          <Stack direction={"column"} spacing={2}>
+         
+            <Button color="inherit" component={Link} to="/">
               Home
             </Button>
-            <Button
-              fullWidth
-              color="inherit"
-              onClick={closeMenu}
-              component={Link}
-              to="/about"
-            >
+            <Button color="inherit" component={Link} to="/about">
               About
             </Button>
-            <Button
-              fullWidth
-              color="inherit"
-              onClick={closeMenu}
-              component={Link}
-              to="/schedule"
-            >
-              Catering
+            <Button color="inherit" component={Link} to="/">
+              Contact
             </Button>
+            <Button color="inherit" component={Link} to="/">
+              Services
+            </Button>
+            <Button color="inherit" component={Link} to="/schedule">
+              Book Online
+            </Button>
+            <Button color="inherit" component={Link} to="/">
+              Packages
+            </Button>
+            <Button color="inherit" component={Link} to="/">
+              FAQ
+            </Button>
+            </Stack>
           </Box>
         )}
       </Toolbar>

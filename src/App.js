@@ -16,6 +16,8 @@ import About from "./components/About";
 import HomeScreen from "./Screens/HomeScreen";
 import PaymentError from "./components/PaymentError";
 import Footer from "./components/Footer";
+import AboutScreen from "./Screens/AboutScreen";
+import OrderScreen from "./Screens/OrderScreen";
 function App() {
   return (
     <Router>
@@ -26,9 +28,9 @@ function App() {
         <Routes>
           <Route path="/success.html*" element={<SuccessMessage />} />
           <Route path="/cancel.html*" element={<PaymentError />} />
-          <Route exact path="/schedule" element={<CateringSchedule />} />
+          <Route exact path="/schedule" element={<OrderScreen />} />
           <Route exact path="/" element={<HomeScreen />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<AboutScreen />} />
         </Routes>
 
         <Footer logo="tasteofamor.png" />
