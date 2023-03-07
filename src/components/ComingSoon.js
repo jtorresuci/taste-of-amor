@@ -8,7 +8,7 @@ function ComingSoon() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
+        minHeight: "75vh",
       }}
     >
       <Typography variant="h4" align="center">

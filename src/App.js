@@ -8,7 +8,9 @@ import { CssBaseline } from '@mui/material';
 
 import SuccessMessage from "./components/SuccessMessage";
 import ComingSoon from "./components/ComingSoon";
-
+import SignatureFooter from "./components/SignatureFooter";
+import Loader from "./components/Loader";
+import Codepen from "./components/Codepen";
 function App() {
   return (
     <Router>
@@ -16,11 +18,15 @@ function App() {
       <CssBaseline/>
         <Navbar logo={'./tasteofamor.png'} />
         <ComingSoon/>
-        <Routes>
+        <div className="loader-container">
+          <Loader />
+        </div>      <Routes>
           <Route path="/success.html*" element={<SuccessMessage />} />
           <Route exact path="/schedule" element={<CateringSchedule />} />
         </Routes>
+        <SignatureFooter/>
       </ThemeProvider>
+
     </Router>
   );
 }
