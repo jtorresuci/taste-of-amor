@@ -68,8 +68,8 @@ function CateringSchedule() {
         height: '100%',
       }}
     >
-      <Box sx={{ fontSize: '24px', fontWeight: 'bold', mb: 3 }}>
-      SCHEDULE
+      <Box sx={{ fontSize: '24px', fontWeight: 'bold', mb: 3, paddingTop: '3rem' }}>
+      SCHEDULE (TEST MODE)
       </Box>
       <Box
         component="form"

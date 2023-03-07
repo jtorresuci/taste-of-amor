@@ -80,8 +80,8 @@ function Navbar({ logo }) {
             <Button color="inherit" component={Link} to="/about">
               About
             </Button>
-            <Button color="inherit" component={Link} to="/contact">
-              Contact
+            <Button color="inherit" component={Link} to="/schedule">
+              Catering
             </Button>
           </Box>
         )}
@@ -123,9 +123,9 @@ function Navbar({ logo }) {
               color="inherit"
               onClick={closeMenu}
               component={Link}
-              to="/contact"
+              to="/schedule"
             >
-              Contact
+              Catering
             </Button>
           </Box>
         )}
