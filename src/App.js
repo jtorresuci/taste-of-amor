@@ -11,6 +11,7 @@ import ComingSoon from "./components/ComingSoon";
 import SignatureFooter from "./components/SignatureFooter";
 import Loader from "./components/Loader";
 import Codepen from "./components/Codepen";
+import './App.css'
 function App() {
   return (
     <Router>

@@ -13,10 +13,10 @@ body {
 		color var(--trans-dur);
 }
 main {
-	/* display: flex; */
-	/* margin: auto; */
-	/* min-height: 320px; */
-	/* width: 100%; */
+	display: flex; 
+	margin: auto;
+	min-height: 320px;
+	 width: 100%;
 }
 .pill,
 .pill__main,
@@ -85,7 +85,7 @@ main {
 	background-color: hsla(0,0%,0%,0.5);
 	border-radius: 1em;
 	filter: blur(12px);
-	margin: -1em auto 0 auto;
+	margin: -.1em auto 0 auto;
 	width: 4.5em;
 	height: 2em;
 	transform: rotateX(60deg);
