@@ -1,11 +1,11 @@
 .signature-footer-container {
   display: flex;
-  align-items: right;
-  justify-content: right;
+  align-items: center;
+  justify-content: space-between;
   padding-right: 1rem;
-  /* padding-top: 4rem; */
-  /* background-color: #fce6f2; */
-}
+  /* padding-top: 4rem; /
+  / background-color: #fce6f2; */
+  }
   
   .signature-footer-logo {
   height: 12px;
@@ -15,14 +15,23 @@
   
   .signature-footer-text {
   font-size: 10px;
-  /* font-family: 'Sail', cursive; */
-  color: black; /* changing the text color to white */
+  /* font-family: 'Sail', cursive; /
+  color: black; / changing the text color to white */
   }
   
   .signature-footer-link {
-    color: #fcbbdf;
-    text-decoration: none;
-    animation: color-change-5x 8s linear infinite alternate both;
+  color: #fcbbdf;
+  text-decoration: none;
+  animation: color-change-5x 8s linear infinite alternate both;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  .signature-footer-container {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-right:0;
+  }
   }
   
   @keyframes color-change-5x {
