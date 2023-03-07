@@ -21,7 +21,9 @@ function Navbar({ logo }) {
   }
 
   function closeMenu() {
-    setIsOpen(false);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 0); // Change the delay time as needed (in milliseconds)
   }
 
   function handleClickOutside(event) {
@@ -43,7 +45,11 @@ function Navbar({ logo }) {
       sx={{ backgroundColor: "#fbfaf8", color: "black" }}
     >
       <Toolbar
-        sx={{ justifyContent: "space-between", paddingTop: "2.5rem", paddingBottom: "2.5rem" }}
+        sx={{
+          justifyContent: "space-between",
+          paddingTop: "2.5rem",
+          paddingBottom: "2.5rem",
+        }}
         ref={navbarRef}
       >
         {/* Logo */}
@@ -78,23 +84,23 @@ function Navbar({ logo }) {
             <Button color="inherit" component={Link} to="/">
               Home
             </Button>
-            <Button color="inherit" component={Link} to="/about">
+            <Button color="inherit" component={Link} to="/about" onClick={closeMenu}>
               About
             </Button>
-            <Button color="inherit" component={Link} to="/schedule">
+            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               Contact
             </Button>
-        
-            <Button color="inherit" component={Link} to="/schedule">
+
+            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               Services
             </Button>
-            <Button color="inherit" component={Link} to="/schedule">
+            <Button color="inherit" component={Link} to="/schedule" onClick={closeMenu}>
               Book Online
             </Button>
-            <Button color="inherit" component={Link} to="/schedule">
+            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               Packages
             </Button>
-            <Button color="inherit" component={Link} to="/schedule">
+            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               FAQ
             </Button>
           </Box>
@@ -111,32 +117,33 @@ function Navbar({ logo }) {
               color: "black",
               zIndex: 1000,
               boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
-              display: isOpen ? "block" : "none",
+              transition: "opacity .5s ease-in-out", // Add the transition here
+              opacity: isOpen ? 1 : 0,
+              pointerEvents: isOpen ? "auto" : "none",
             }}
           >
-          <Stack direction={"column"} spacing={2}>
-         
-            <Button color="inherit" component={Link} to="/">
-              Home
-            </Button>
-            <Button color="inherit" component={Link} to="/about">
-              About
-            </Button>
-            <Button color="inherit" component={Link} to="/">
-              Contact
-            </Button>
-            <Button color="inherit" component={Link} to="/">
-              Services
-            </Button>
-            <Button color="inherit" component={Link} to="/schedule">
-              Book Online
-            </Button>
-            <Button color="inherit" component={Link} to="/">
-              Packages
-            </Button>
-            <Button color="inherit" component={Link} to="/">
-              FAQ
-            </Button>
+            <Stack direction={"column"} spacing={2}>
+              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+                Home
+              </Button>
+              <Button color="inherit" component={Link} to="/about" onClick={closeMenu}>
+                About
+              </Button>
+              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+                Contact
+              </Button>
+              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+                Services
+              </Button>
+              <Button color="inherit" component={Link} to="/schedule" onClick={closeMenu}>
+                Book Online
+              </Button>
+              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+                Packages
+              </Button>
+              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+                FAQ
+              </Button>
             </Stack>
           </Box>
         )}
