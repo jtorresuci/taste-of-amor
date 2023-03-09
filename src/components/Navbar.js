@@ -94,7 +94,7 @@ function Navbar({ logo }) {
             <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               Services
             </Button>
-            <Button color="inherit" component={Link} to="/schedule" onClick={closeMenu}>
+            <Button color="inherit" component={Link} to="/book" onClick={closeMenu}>
               Book Online
             </Button>
             <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
@@ -135,7 +135,7 @@ function Navbar({ logo }) {
               <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
                 Services
               </Button>
-              <Button color="inherit" component={Link} to="/schedule" onClick={closeMenu}>
+              <Button color="inherit" component={Link} to="/book" onClick={closeMenu}>
                 Book Online
               </Button>
               <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
