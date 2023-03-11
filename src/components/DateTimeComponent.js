@@ -12,37 +12,37 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
-import { loadStripe } from "@stripe/stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 
 import {
   DatePicker,
-  DateTimePicker,
-  MobileDatePicker,
-  MobileDateTimePicker,
   MobileTimePicker,
-  StaticDatePicker,
-  StaticTimePicker,
-  TimePicker,
 } from "@mui/x-date-pickers/";
 
 import dayjs from "dayjs";
 import axios from "axios";
 import "./DateTimeComponent.css";
-import FormControlContext from "@mui/material/FormControl/FormControlContext";
 
 function DateTimeComponent() {
   const [events, setEvents] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     phone: "",
-    dateTime: "",
+    date: "",
+    time: "",
     message: "",
     option: "option1",
+    address: "",
+    city: "",
+    state: ""
   });
+  
 
   useEffect(() => {
     async function fetchData() {
@@ -74,8 +74,11 @@ function DateTimeComponent() {
       alert("This date is unavailable.");
     } else {
       setSelectedDate(date);
+      setFormState({
+        ...formState,
+        date: date.format("YYYY-MM-DD"),
+      });
     }
-    console.log(selectedDate);
   };
   const handleChange = (event) => {
     setFormState({
@@ -86,23 +89,18 @@ function DateTimeComponent() {
 
   const handleTimeChange = (time) => {
     setSelectedTime(time);
+    setFormState({
+      ...formState,
+      time: time.format("HH:mm:ss"),
+    });
   };
 
-  const renderDay = (day, selectedDate, dayInCurrentMonth, dayComponent) => {
-    if (!isAvailableDay(day)) {
-      return React.cloneElement(dayComponent, {
-        style: { backgroundColor: "pink" },
-      });
-    }
-
-    return dayComponent;
-  };
-
-  const { name, email, phone, dateTime, message, option } = formState;
+  const { name, email, phone, date, time, message, option, address, city, state } = formState;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+    setIsSubmitting(true); // set isSubmitting to true to disable the button
+
     const formData = {
       name,
       email,
@@ -111,23 +109,30 @@ function DateTimeComponent() {
       date: selectedDate.format("YYYY-MM-DD"),
       time: selectedTime.format("HH:mm:ss"),
       option,
+      address,
+      city,
+      state,
     };
-  
+    
+
     try {
       const response = await axios.post(
         "http://localhost:8000/schedule-event",
         formData
       );
-      console.log(response.data);
+
+
       setTimeout(() => {
-        window.location.href = `/thank-you?name=${name}&email=${email}&phone=${phone}&message=${message}&date=${selectedDate.format("YYYY-MM-DD")}&time=${selectedTime.format("HH:mm:ss")}&option=${option}`;
+        window.location.href = `/thank-you?name=${name}&email=${email}&phone=${phone}&message=${message}&date=${selectedDate.format(
+          "YYYY-MM-DD"
+        )}&time=${selectedTime.format("HH:mm:ss")}&option=${option}`;
       }, 1000);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsSubmitting(false); // set isSubmitting back to false after the request is finished
     }
   };
-  
-  
 
   return (
     <Box
@@ -156,7 +161,10 @@ function DateTimeComponent() {
         }}
       >
         <DatePicker onChange={handleDateChange} sx={{ mb: 2, width: "100%" }} />
-        <MobileTimePicker sx={{ mb: 2, width: "100%" }} onChange={handleTimeChange} />
+        <MobileTimePicker
+          sx={{ mb: 2, width: "100%" }}
+          onChange={handleTimeChange}
+        />
         <TextField
           label="Name"
           name="name"
@@ -184,6 +192,36 @@ function DateTimeComponent() {
           required
         />
         <TextField
+          label="Address"
+          type="text"
+          name="address"
+          value={address}
+          onChange={handleChange}
+          sx={{ mb: 2, width: "100%" }}
+          required
+        />
+        <div style={{ width: "100%", display: "flex", gap: "16px", alignItems: "center" }}>
+          <TextField
+            label="City"
+            type="text"
+            name="city"
+            value={city}
+            onChange={handleChange}
+            sx={{ mb:2, width: "100%" }}
+            required
+          />
+
+          <TextField
+            label="State"
+            type="text"
+            name="state"
+            value={state}
+            onChange={handleChange}
+            sx={{ mb:2, width: "100%" }}
+            required
+          />
+        </div>
+        <TextField
           label="Message"
           name="message"
           value={message}
@@ -197,11 +235,13 @@ function DateTimeComponent() {
           <FormLabel component="legend">Options</FormLabel>
           <RadioGroup
             aria-label="options"
-            name="options"
+            name="option" // update name to "option"
             sx={{
               flexDirection: isMobile ? "column" : "row",
               justifyContent: "space-between",
             }}
+            value={option} // add value prop to set the selected option
+            onChange={handleChange}
           >
             <FormControlLabel
               value="option1"
@@ -225,8 +265,9 @@ function DateTimeComponent() {
           onClick={handleSubmit}
           variant="contained"
           sx={{ width: "100%" }}
+          disabled={isSubmitting} // disable the button when isSubmitting is true
         >
-          Schedule Event
+          {isSubmitting ? "Submitting..." : "Schedule Event"}
         </Button>
       </Box>
     </Box>

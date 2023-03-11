@@ -22,6 +22,7 @@ import BookScreen from "./Screens/BookScreen";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import ThankYou from "./components/ThankYou";
+import AdminScreen from "./Screens/AdminScreen";
 function App() {
   return (
     <Router>
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/" element={<HomeScreen />} />
           <Route exact path="/about" element={<AboutScreen />} />
           <Route exact path="/book" element={<BookScreen />} />
+          <Route exact path="/admin" element={<AdminScreen />} />
         </Routes>
 
         <Footer logo="tasteofamor.png" />
