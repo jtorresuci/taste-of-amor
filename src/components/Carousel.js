@@ -7,12 +7,12 @@ function Carousel() {
       <div class="container">
         <div class="carousel">
           <img class="slide" draggable="false" src="tasteofamor.png" />
-          <img class="slide" draggable="false" src="crepe1.png" />
-          <img class="slide" draggable="false" src="crepe2.png" />
-          <img class="slide" draggable="false" src="crepe3.png" />
-          <img class="slide" draggable="false" src="crepe4.png" />
-          <img class="slide" draggable="false" src="crepe1.png" />
-          <img class="slide" draggable="false" src="crepe1.png" />
+          <img class="slide" draggable="false" src="crepe1.jpg" />
+          <img class="slide" draggable="false" src="crepe2.jpg" />
+          <img class="slide" draggable="false" src="crepe3.jpg" />
+          <img class="slide" draggable="false" src="crepe4.jpg" />
+          <img class="slide" draggable="false" src="crepe1.jpg" />
+          <img class="slide" draggable="false" src="crepe2.jpg" />
         </div>
       </div>
     </div>
