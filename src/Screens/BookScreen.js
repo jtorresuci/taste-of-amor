@@ -7,7 +7,7 @@ import DateTimeComponent from "../components/DateTimeComponent";
 function BookScreen() {
   return (
     <div>
-      <Box className="dateTimeBox" sx={{ p: 5, margin: 5 }}>
+      <Box >
         <DateTimeComponent />
         {/* <ContactForm /> */}
       </Box>

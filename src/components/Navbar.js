@@ -84,30 +84,50 @@ function Navbar({ logo }) {
             <Button color="inherit" component={Link} to="/">
               Home
             </Button>
-            <Button color="inherit" component={Link} to="/about" onClick={closeMenu}>
+            <Button
+              color="inherit"
+              component={Link}
+              to="/about"
+              onClick={closeMenu}
+            >
               About
             </Button>
-            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+            <Button
+              color="inherit"
+              component={Link}
+              to="/contact"
+              onClick={closeMenu}
+            >
               Contact
             </Button>
-
+{/* 
             <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               Services
-            </Button>
-            <Button color="inherit" component={Link} to="/book" onClick={closeMenu}>
+            </Button> */}
+            <Button
+              color="inherit"
+              component={Link}
+              to="/book"
+              onClick={closeMenu}
+            >
               Book Online
             </Button>
-            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+            {/* <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
               Packages
-            </Button>
-            <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+            </Button> */}
+            <Button
+              color="inherit"
+              component={Link}
+              to="/faq"
+              onClick={closeMenu}
+            >
               FAQ
             </Button>
           </Box>
         )}
         {/* Mobile menu */}
         {isMobile && (
-            <Box
+          <Box
             sx={{
               position: "absolute",
               top: "64px",
@@ -123,25 +143,60 @@ function Navbar({ logo }) {
             }}
           >
             <Stack direction={"column"} spacing={2}>
-              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+              <Button
+                color="inherit"
+                component={Link}
+                to="/"
+                onClick={closeMenu}
+              >
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/about" onClick={closeMenu}>
+              <Button
+                color="inherit"
+                component={Link}
+                to="/about"
+                onClick={closeMenu}
+              >
                 About
               </Button>
-              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+              <Button
+                color="inherit"
+                component={Link}
+                to="/contact"
+                onClick={closeMenu}
+              >
                 Contact
               </Button>
-              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+              {/* <Button
+                color="inherit"
+                component={Link}
+                to="/"
+                onClick={closeMenu}
+              >
                 Services
-              </Button>
-              <Button color="inherit" component={Link} to="/book" onClick={closeMenu}>
+              </Button> */}
+              <Button
+                color="inherit"
+                component={Link}
+                to="/book"
+                onClick={closeMenu}
+              >
                 Book Online
               </Button>
-              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+              {/* <Button
+                color="inherit"
+                component={Link}
+                to="/"
+                onClick={closeMenu}
+              >
                 Packages
-              </Button>
-              <Button color="inherit" component={Link} to="/" onClick={closeMenu}>
+              </Button> */}
+              <Button
+                color="inherit"
+                component={Link}
+                to="/faq"
+                onClick={closeMenu}
+              >
                 FAQ
               </Button>
             </Stack>

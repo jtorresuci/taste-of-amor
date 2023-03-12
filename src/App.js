@@ -23,6 +23,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import ThankYou from "./components/ThankYou";
 import AdminScreen from "./Screens/AdminScreen";
+import FaqCopy from "./components/FaqCopy";
+import Contact from "./components/Contact";
 function App() {
   return (
     <Router>
@@ -36,11 +38,13 @@ function App() {
           <Route path="/success.html*" element={<SuccessMessage />} />
           <Route path="/cancel.html*" element={<PaymentError />} />
           <Route path="/thank-you*" element={<ThankYou />} />
+          <Route exact path="/admin*" element={<AdminScreen />} />
           <Route exact path="/schedule" element={<OrderScreen />} />
           <Route exact path="/" element={<HomeScreen />} />
           <Route exact path="/about" element={<AboutScreen />} />
           <Route exact path="/book" element={<BookScreen />} />
-          <Route exact path="/admin" element={<AdminScreen />} />
+          <Route exact path="/faq" element={<FaqCopy />} />
+          <Route exact path="/contact" element={<Contact />} />
         </Routes>
 
         <Footer logo="tasteofamor.png" />

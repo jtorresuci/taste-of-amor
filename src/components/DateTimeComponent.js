@@ -10,14 +10,13 @@ import {
   RadioGroup,
   Radio,
   FormControlLabel,
+  Container,
+  Typography,
 } from "@mui/material";
 
 // import { loadStripe } from "@stripe/stripe-js";
 
-import {
-  DatePicker,
-  MobileTimePicker,
-} from "@mui/x-date-pickers/";
+import { DatePicker, MobileTimePicker } from "@mui/x-date-pickers/";
 
 import dayjs from "dayjs";
 import axios from "axios";
@@ -40,9 +39,8 @@ function DateTimeComponent() {
     option: "option1",
     address: "",
     city: "",
-    state: ""
+    state: "",
   });
-  
 
   useEffect(() => {
     async function fetchData() {
@@ -95,7 +93,18 @@ function DateTimeComponent() {
     });
   };
 
-  const { name, email, phone, date, time, message, option, address, city, state } = formState;
+  const {
+    name,
+    email,
+    phone,
+    date,
+    time,
+    message,
+    option,
+    address,
+    city,
+    state,
+  } = formState;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -113,14 +122,12 @@ function DateTimeComponent() {
       city,
       state,
     };
-    
 
     try {
       const response = await axios.post(
         "http://localhost:8000/schedule-event",
         formData
       );
-
 
       setTimeout(() => {
         window.location.href = `/thank-you?name=${name}&email=${email}&phone=${phone}&message=${message}&date=${selectedDate.format(
@@ -139,16 +146,23 @@ function DateTimeComponent() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
-        height: "100%",
+        alignItems: "center",
+        p: "2rem",
+        borderRadius: "2rem",
+        //   backgroundColor: "#fce6f2",
+        mx: { xs: "2rem", md: "6rem" }, // adjust the horizontal margin for different screen sizes
+        my: { xs: "1rem", md: "1rem" }, // adjust the horizontal margin for different screen sizes
       }}
     >
-      <Box
-        sx={{ fontSize: "24px", fontWeight: "bold", mb: 3, paddingTop: "1rem" }}
-      >
+  <Container maxWidth="sm">
+      <Typography variant="h4" align="center" gutterBottom>
         Schedule an Event
-      </Box>
+      </Typography>
+      <Typography variant="subtitle1" align="center" gutterBottom>
+        We look forward to serving you and your guests!
+      </Typography>
+      </Container>
       <Box
         component="form"
         onSubmit={handleSubmit}
@@ -200,14 +214,21 @@ function DateTimeComponent() {
           sx={{ mb: 2, width: "100%" }}
           required
         />
-        <div style={{ width: "100%", display: "flex", gap: "16px", alignItems: "center" }}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            gap: "16px",
+            alignItems: "center",
+          }}
+        >
           <TextField
             label="City"
             type="text"
             name="city"
             value={city}
             onChange={handleChange}
-            sx={{ mb:2, width: "100%" }}
+            sx={{ mb: 2, width: "100%" }}
             required
           />
 
@@ -217,7 +238,7 @@ function DateTimeComponent() {
             name="state"
             value={state}
             onChange={handleChange}
-            sx={{ mb:2, width: "100%" }}
+            sx={{ mb: 2, width: "100%" }}
             required
           />
         </div>
