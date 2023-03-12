@@ -16,10 +16,10 @@ function HomeScreen() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          p: "2rem",
+          // p: "2rem",
           borderRadius: "2rem",
           // backgroundColor: "#fce6f2",
-          mx: { xs: "2rem", md: "6rem" }, // adjust the horizontal margin for different screen sizes
+          // mx: { xs: "2rem", md: "6rem" }, // adjust the horizontal margin for different screen sizes
           my: { xs: ".5rem", md: "1rem" }, // adjust the horizontal margin for different screen sizes
         }}
       >
