@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#fce6f2', // pink color for buttons and bars
+      main: '#FFB6C1', // pink color for buttons and bars
     },
     background: {
       default: '#fbfaf8', // white background color for the main page
