@@ -1,8 +1,6 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { useHistory } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
 import "./Hero.css";
-import Carousel from "./Carousel";
 
 function Hero() {
   return (
@@ -14,9 +12,6 @@ function Hero() {
         Delicious crepes made fresh on-site for weddings, parties, and corporate
         events.
       </Typography>
-      {/* <Button variant="contained" color="primary" size="large" >
-        Book Now
-      </Button> */}
     </Box>
   );
 }
