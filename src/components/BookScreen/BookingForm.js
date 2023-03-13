@@ -21,6 +21,9 @@ import { DatePicker, MobileTimePicker } from "@mui/x-date-pickers/";
 import dayjs from "dayjs";
 import axios from "axios";
 import "./BookingForm.css";
+import PhoneField from "./Fields/PhoneField";
+import EmailField from "./Fields/EmailField";
+import AddressFields from "./Fields/AddressFields";
 
 function BookingForm() {
   const [events, setEvents] = useState([]);
@@ -155,13 +158,13 @@ function BookingForm() {
         my: { xs: "1rem", md: "1rem" }, // adjust the horizontal margin for different screen sizes
       }}
     >
-  <Container maxWidth="sm">
-      <Typography variant="h4" align="center" gutterBottom>
-        Schedule an Event
-      </Typography>
-      <Typography variant="subtitle1" align="center" gutterBottom>
-        We look forward to serving you and your guests!
-      </Typography>
+      <Container maxWidth="sm">
+        <Typography variant="h4" align="center" gutterBottom>
+          Schedule an Event
+        </Typography>
+        <Typography variant="subtitle1" align="center" gutterBottom>
+          We look forward to serving you and your guests!
+        </Typography>
       </Container>
       <Box
         component="form"
@@ -187,61 +190,9 @@ function BookingForm() {
           sx={{ mb: 2, width: "100%" }}
           required
         />
-        <TextField
-          label="Email"
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          sx={{ mb: 2, width: "100%" }}
-          required
-        />
-        <TextField
-          label="Phone"
-          type="tel"
-          name="phone"
-          value={phone}
-          onChange={handleChange}
-          sx={{ mb: 2, width: "100%" }}
-          required
-        />
-        <TextField
-          label="Address"
-          type="text"
-          name="address"
-          value={address}
-          onChange={handleChange}
-          sx={{ mb: 2, width: "100%" }}
-          required
-        />
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            gap: "16px",
-            alignItems: "center",
-          }}
-        >
-          <TextField
-            label="City"
-            type="text"
-            name="city"
-            value={city}
-            onChange={handleChange}
-            sx={{ mb: 2, width: "100%" }}
-            required
-          />
-
-          <TextField
-            label="State"
-            type="text"
-            name="state"
-            value={state}
-            onChange={handleChange}
-            sx={{ mb: 2, width: "100%" }}
-            required
-          />
-        </div>
+        <EmailField email={email} handleChange={handleChange} />
+        <PhoneField phone={phone} handleChange={handleChange} />
+        <AddressFields address={address} city={city} state={state} handleChange={handleChange} />
         <TextField
           label="Message"
           name="message"
