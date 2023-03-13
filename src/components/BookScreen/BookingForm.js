@@ -20,9 +20,9 @@ import { DatePicker, MobileTimePicker } from "@mui/x-date-pickers/";
 
 import dayjs from "dayjs";
 import axios from "axios";
-import "./DateTimeComponent.css";
+import "./BookingForm.css";
 
-function DateTimeComponent() {
+function BookingForm() {
   const [events, setEvents] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
@@ -295,4 +295,4 @@ function DateTimeComponent() {
   );
 }
 
-export default DateTimeComponent;
+export default BookingForm;
