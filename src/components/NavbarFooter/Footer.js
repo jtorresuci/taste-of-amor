@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Footer({ logo }) {
   return (
-    <Box sx={{ color: "black", paddingTop: 20 }}>
+    <Box sx={{ color: "black", paddingTop: 10 }}>
       <Container
         sx={{
           display: "flex",
