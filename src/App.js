@@ -3,28 +3,25 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./Homepage";
 import theme from "./theme";
-import CateringSchedule from "./components/CateringSchedule";
 import { CssBaseline } from "@mui/material";
 
 import SuccessMessage from "./components/SuccessMessage";
-import ComingSoon from "./components/ComingSoon";
+
 import SignatureFooter from "./components/SignatureFooter";
 import Loader from "./components/Loader";
-import Codepen from "./components/Codepen";
 import "./App.css";
-import About from "./components/About";
 import HomeScreen from "./Screens/HomeScreen";
 import PaymentError from "./components/PaymentError";
 import Footer from "./components/Footer";
 import AboutScreen from "./Screens/AboutScreen";
-import OrderScreen from "./Screens/OrderScreen";
+
 import BookScreen from "./Screens/BookScreen";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import ThankYou from "./components/ThankYou";
 import AdminScreen from "./Screens/AdminScreen";
-import FaqCopy from "./components/FaqCopy";
-import Contact from "./components/Contact";
+import FaqCopy from "./components/FAQScreen/FaqCopy";
+import Contact from "./components/ContactScreen/Contact";
 function App() {
   return (
     <Router>
@@ -39,7 +36,6 @@ function App() {
           <Route path="/cancel.html*" element={<PaymentError />} />
           <Route path="/thank-you*" element={<ThankYou />} />
           <Route exact path="/admin*" element={<AdminScreen />} />
-          <Route exact path="/schedule" element={<OrderScreen />} />
           <Route exact path="/" element={<HomeScreen />} />
           <Route exact path="/about" element={<AboutScreen />} />
           <Route exact path="/book" element={<BookScreen />} />

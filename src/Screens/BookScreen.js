@@ -1,8 +1,7 @@
 import { Box } from "@mui/system";
 import { DatePicker } from "@mui/x-date-pickers";
 import React from "react";
-import ContactForm from "../components/ContactForm";
-import DateTimeComponent from "../components/DateTimeComponent";
+import DateTimeComponent from "../components/BookScreen/DateTimeComponent";
 
 function BookScreen() {
   return (

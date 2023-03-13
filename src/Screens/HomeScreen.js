@@ -1,10 +1,9 @@
 import React from "react";
-import ComingSoon from "../components/ComingSoon";
-import Loader from "../components/Loader";
-import Carousel from "../components/Carousel";
+
 import { Box } from "@mui/system";
-import BookNow from "../components/BookNow";
-import Hero from "../components/Hero";
+import BookNow from "../components/HomeScreen/BookNow";
+import Hero from "../components/HomeScreen/Hero";
+import Carousel from "../components/HomeScreen/Carousel";
 
 function HomeScreen() {
   return (
